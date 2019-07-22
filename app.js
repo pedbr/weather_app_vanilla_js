@@ -6,6 +6,8 @@ window.addEventListener('load', () => {
   let temperatureDescription = document.querySelector('.temperature-description');
   let temperatureDegree = document.querySelector('.temperature-degrees');
   let locationTimezone = document.querySelector('.location-timezone');
+  let temperatureSection = document.querySelector('.temperature');
+  const temperatureSpan = document.querySelector('.temperature span')
 
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -28,8 +30,17 @@ window.addEventListener('load', () => {
 
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
-        })
-    })
+
+          // Change temperature between celsius/farenheit
+          temperatureSection.addEventListener('click', () =>{
+            if(temperatureSpan.textContent === "F"){
+              temperatureSpan.textContent = "C";
+            } else {
+              temperatureSpan.textContent = "F";
+            }
+          });
+        });
+    });
   } else {
     h1.textContent = "Please enable your location to view the weather!"
   }
