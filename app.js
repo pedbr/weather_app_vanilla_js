@@ -23,13 +23,15 @@ window.addEventListener('load', () => {
           console.log(error);
         })
         .then(data => {
+          console.log(data);
           const { temperature, summary, icon } = data.currently;
           // Set DOM Elements from API
-          temperatureDegree.textContent = temperature;
+          
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
           // Formula to conver farenheit to celsius
           let celsius = (temperature - 32) * (5 / 9);
+          temperatureDegree.textContent = `${Math.floor(celsius)}° C`;
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
 
@@ -37,7 +39,7 @@ window.addEventListener('load', () => {
           temperatureSection.addEventListener('click', () =>{
             if(temperatureSpan.textContent === "F"){
               temperatureSpan.textContent = "C";
-              temperatureDegree.textContent = Math.floor(celsius);
+              temperatureDegree.textContent = `${Math.floor(celsius)}°`;
             } else {
               temperatureSpan.textContent = "F";
               temperatureDegree.textContent = temperature;
