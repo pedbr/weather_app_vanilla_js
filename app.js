@@ -20,11 +20,11 @@ window.addEventListener('load', () => {
           return response.json();
         })
         .then(data => {
-          console.log(data);
           const { temperature, summary } = data.currently;
           // Set DOM Elements from API
           temperatureDegree.textContent = temperature;
           temperatureDescription.textContent = summary;
+          locationTimezone.textContent = data.timezone;
         })
     })
   } else {
