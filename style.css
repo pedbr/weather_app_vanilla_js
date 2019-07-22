@@ -10,7 +10,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(rgb(132, 235, 245), rgb(78, 145, 207));
+  /* background: linear-gradient(#2BC0E4, #EAECC6); */
   font-family: sans-serif;
   color: white;
 }

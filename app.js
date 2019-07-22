@@ -4,7 +4,6 @@ window.addEventListener('load', () => {
   let temperatureDescription = document.querySelector('.temperature-description');
   let temperatureDegree = document.querySelector('.temperature-degrees');
   let locationTimezone = document.querySelector('.location-timezone');
-  let temperatureSection = document.querySelector('.temperature');
   const temperatureSpan = document.querySelector('.temperature span')
 
   if(navigator.geolocation) {
@@ -46,6 +45,37 @@ window.addEventListener('load', () => {
               temperatureDegree.textContent = `${Math.floor(temperature)}°`;
             }
           });
+          let clearNightColor = `linear-gradient(#16222A, #3A6073);`;
+          let clearDayColor = `linear-gradient(#2BC0E4, #EAECC6);`;
+          let rainColor = `linear-gradient(#bdc3c7, #2c3e50);`;
+          let snowColor = `linear-gradient(#D3CCE3, #E9E4F0);`;
+          let windColor = `linear-gradient(#C9D6FF, #E2E2E2);`;
+          let partialCloudNight = `linear-gradient(#20002c, #cbb4d4);`;
+          let partialCloudDay = `linear-gradient(#6190E8, #A7BFE8);`;  
+
+          if (icon === 'CLEAR_NIGHT'){
+            document.body.style.background = clearNightColor
+          } else if (icon === 'CLEAR_DAY'){
+            document.body.style.background = clearDayColor
+          } else if (icon === 'RAIN'){
+            document.body.style.background = rainColor
+          } else if (icon === 'SNOW'){
+            document.body.style.background = snowColor
+          } else if (icon === 'SLEET'){
+            document.body.style.background = snowColor
+          } else if (icon === 'WIND'){
+            document.body.style.background = windColor
+          } else if (icon === 'FOG'){
+            document.body.style.background = windColor
+          } else if (icon === 'CLOUDY'){
+            document.body.style.background = windColor
+          } else if (icon === 'PARTLY_CLOUDY_DAY'){
+            document.body.style.background = partialCloudDay
+          } else if (icon === 'PARTLY_CLOUDY_NIGHT'){
+            document.body.style.background = partialCloudNight
+          } else {
+            document.body.style.background = clearDayColor
+          }
         });
     });
   } else {
