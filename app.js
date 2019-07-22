@@ -31,7 +31,8 @@ window.addEventListener('load', () => {
           locationTimezone.textContent = data.timezone;
           // Formula to conver farenheit to celsius
           let celsius = (temperature - 32) * (5 / 9);
-          temperatureDegree.textContent = `${Math.floor(celsius)}° C`;
+          temperatureDegree.textContent = `${Math.floor(celsius)}°`;
+          temperatureSpan.textContent = "C";
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
 
@@ -42,7 +43,7 @@ window.addEventListener('load', () => {
               temperatureDegree.textContent = `${Math.floor(celsius)}°`;
             } else {
               temperatureSpan.textContent = "F";
-              temperatureDegree.textContent = temperature;
+              temperatureDegree.textContent = `${Math.floor(temperature)}°`;
             }
           });
         });
