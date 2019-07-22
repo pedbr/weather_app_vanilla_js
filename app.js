@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
           console.log(data);
           const { temperature, summary, icon } = data.currently;
           // Set DOM Elements from API
-          
+          checkIcon(icon);
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
           // Formula to conver farenheit to celsius
@@ -45,38 +45,8 @@ window.addEventListener('load', () => {
               temperatureDegree.textContent = `${Math.floor(temperature)}°`;
             }
           });
-          let clearNightColor = `linear-gradient(#16222A, #3A6073);`;
-          let clearDayColor = `linear-gradient(#2BC0E4, #EAECC6);`;
-          let rainColor = `linear-gradient(#bdc3c7, #2c3e50);`;
-          let snowColor = `linear-gradient(#D3CCE3, #E9E4F0);`;
-          let windColor = `linear-gradient(#C9D6FF, #E2E2E2);`;
-          let partialCloudNight = `linear-gradient(#20002c, #cbb4d4);`;
-          let partialCloudDay = `linear-gradient(#6190E8, #A7BFE8);`;  
-
-          if (icon === 'CLEAR_NIGHT'){
-            document.body.style.background = clearNightColor
-          } else if (icon === 'CLEAR_DAY'){
-            document.body.style.background = clearDayColor
-          } else if (icon === 'RAIN'){
-            document.body.style.background = rainColor
-          } else if (icon === 'SNOW'){
-            document.body.style.background = snowColor
-          } else if (icon === 'SLEET'){
-            document.body.style.background = snowColor
-          } else if (icon === 'WIND'){
-            document.body.style.background = windColor
-          } else if (icon === 'FOG'){
-            document.body.style.background = windColor
-          } else if (icon === 'CLOUDY'){
-            document.body.style.background = windColor
-          } else if (icon === 'PARTLY_CLOUDY_DAY'){
-            document.body.style.background = partialCloudDay
-          } else if (icon === 'PARTLY_CLOUDY_NIGHT'){
-            document.body.style.background = partialCloudNight
-          } else {
-            document.body.style.background = clearDayColor
-          }
-        });
+        
+      });
     });
   } else {
     h1.textContent = "Please enable your location to view the weather!"
@@ -88,5 +58,40 @@ window.addEventListener('load', () => {
     skycons.play();
     return skycons.set(iconID, Skycons[currentIcon]);
   }
+
+  let clearNightColor = `linear-gradient(#16222A, #3A6073);`;
+  let clearDayColor = `linear-gradient(#2BC0E4, #EAECC6);`;
+  let rainColor = `linear-gradient(#bdc3c7, #2c3e50);`;
+  let snowColor = `linear-gradient(#D3CCE3, #E9E4F0);`;
+  let windColor = `linear-gradient(#C9D6FF, #E2E2E2);`;
+  let partialCloudNight = `linear-gradient(#20002c, #cbb4d4);`;
+  let partialCloudDay = `linear-gradient(#6190E8, #A7BFE8);`;  
+
+          
+  const checkIcon = icon => {
+    if (icon === 'clear-night'){
+      document.body.style.background = clearNightColor
+    } else if (icon === 'clear-day'){
+      document.body.style.background = clearDayColor
+    } else if (icon === 'rain'){
+      document.body.style.background = rainColor
+    } else if (icon === 'snow'){
+      document.body.style.background = snowColor
+    } else if (icon === 'sleet'){
+      document.body.style.background = snowColor
+    } else if (icon === 'wind'){
+      document.body.style.background = windColor
+    } else if (icon === 'fog'){
+      document.body.style.background = windColor
+    } else if (icon === 'cloudy'){
+      document.body.style.background = windColor
+    } else if (icon === 'PARTLY_CLOUDY_DAY'){
+      document.body.style.background = partialCloudDay
+    } else if (icon === 'PARTLY_CLOUDY_NIGHT'){
+      document.body.style.background = partialCloudNight
+    } else {
+      document.body.style.background = clearDayColor
+    }
+  };
 
 });
