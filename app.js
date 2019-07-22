@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
           setIcons(icon, document.querySelector(".icon"));
 
           // Change temperature between celsius/farenheit
-          temperatureSection.addEventListener('click', () =>{
+          temperatureDegree.addEventListener('click', () =>{
             if(temperatureSpan.textContent === "F"){
               temperatureSpan.textContent = "C";
               temperatureDegree.textContent = `${Math.floor(celsius)}°`;
