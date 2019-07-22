@@ -25,7 +25,6 @@ window.addEventListener('load', () => {
           console.log(data);
           const { temperature, summary, icon } = data.currently;
           // Set DOM Elements from API
-          checkIcon(icon);
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
           // Formula to conver farenheit to celsius
@@ -34,7 +33,7 @@ window.addEventListener('load', () => {
           temperatureSpan.textContent = "C";
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
-
+          debugger
           // Change temperature between celsius/farenheit
           temperatureDegree.addEventListener('click', () =>{
             if(temperatureSpan.textContent === "F"){
@@ -56,19 +55,15 @@ window.addEventListener('load', () => {
     const skycons = new Skycons({ color: "white" });
     const currentIcon = icon.replace(/-/g, "_").toUpperCase();
     skycons.play();
-    return skycons.set(iconID, Skycons[currentIcon]);
-  }
-
-  let clearNightColor = `linear-gradient(#16222A, #3A6073);`;
-  let clearDayColor = `linear-gradient(#2BC0E4, #EAECC6);`;
-  let rainColor = `linear-gradient(#bdc3c7, #2c3e50);`;
-  let snowColor = `linear-gradient(#D3CCE3, #E9E4F0);`;
-  let windColor = `linear-gradient(#C9D6FF, #E2E2E2);`;
-  let partialCloudNight = `linear-gradient(#20002c, #cbb4d4);`;
-  let partialCloudDay = `linear-gradient(#6190E8, #A7BFE8);`;  
-
-          
-  const checkIcon = icon => {
+    debugger
+    let clearNightColor = `linear-gradient(#16222A, #3A6073);`;
+    let clearDayColor = `linear-gradient(#2BC0E4, #EAECC6);`;
+    let rainColor = `linear-gradient(#bdc3c7, #2c3e50);`;
+    let snowColor = `linear-gradient(#D3CCE3, #E9E4F0);`;
+    let windColor = `linear-gradient(#C9D6FF, #E2E2E2);`;
+    let partialCloudNight = `linear-gradient(#20002c, #cbb4d4);`;
+    let partialCloudDay = `linear-gradient(#6190E8, #A7BFE8);`;  
+    debugger
     if (icon === 'clear-night'){
       document.body.style.background = clearNightColor
     } else if (icon === 'clear-day'){
@@ -85,13 +80,14 @@ window.addEventListener('load', () => {
       document.body.style.background = windColor
     } else if (icon === 'cloudy'){
       document.body.style.background = windColor
-    } else if (icon === 'PARTLY_CLOUDY_DAY'){
+    } else if (icon === 'partly-cloudy-day'){
       document.body.style.background = partialCloudDay
-    } else if (icon === 'PARTLY_CLOUDY_NIGHT'){
+    } else if (icon === 'partly-cloudy-night'){
       document.body.style.background = partialCloudNight
     } else {
-      document.body.style.background = clearDayColor
+      document.body.style.background = `${clearDayColor}`
     }
-  };
-
+    debugger
+    return skycons.set(iconID, Skycons[currentIcon]);
+  }
 });
