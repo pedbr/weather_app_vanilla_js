@@ -76,7 +76,7 @@ window.addEventListener('load', () => {
           windSpeedInfo.textContent = `${Math.floor(windSpeed)} m/s`;
 
           // Current probability of rain
-          rainProbabilityInfo.textContent = precipProbability;
+          rainProbabilityInfo.textContent = `${precipProbability * 100}%`;
 
           // Current humidity
           humidityInfo.textContent = humidity;
