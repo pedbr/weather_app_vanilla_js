@@ -4,8 +4,7 @@ window.addEventListener('load', () => {
   let temperatureDescription = document.querySelector('.temperature-description');
   let temperatureDegree = document.querySelector('.temperature-degrees');
   let locationTimezone = document.querySelector('.location-timezone');
-  let temperatureSection = document.querySelector('.temperature');
-  const temperatureSpan = document.querySelector('.temperature span');
+  let temperatureSpan = document.querySelector('.temperature span');
   let maxTemperatureInfo = document.querySelector('.max-temp-info');
   let minTemperatureInfo = document.querySelector('.min-temp-info');
   let sunriseInfo = document.querySelector('.sunrise-info');
@@ -37,12 +36,23 @@ window.addEventListener('load', () => {
           
           temperatureDescription.textContent = summary;
           locationTimezone.textContent = data.timezone;
+
           // Formula to conver farenheit to celsius
           let celsius = (temperature - 32) * (5 / 9);
           temperatureDegree.textContent = `${Math.floor(celsius)}°`;
           temperatureSpan.textContent = "C";
+
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
+
+          // Adding Extra Elements
+          maxTemperatureInfo.textContent = temperatureMax;
+          minTemperatureInfo.textContent = temperatureLow;
+          sunriseInfo.textContent = sunriseTime;
+          sunsetInfo.textContent = sunsetTime;
+          windSpeedInfo.textContent = windSpeed;
+          rainProbabilityInfo.textContent = precipProbability;
+          humidityInfo.textContent = humidity;
 
           // Change temperature between celsius/farenheit
           temperatureDegree.addEventListener('click', () =>{
