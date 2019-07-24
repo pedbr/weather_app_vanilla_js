@@ -79,7 +79,7 @@ window.addEventListener('load', () => {
           rainProbabilityInfo.textContent = `${precipProbability * 100}%`;
 
           // Current humidity
-          humidityInfo.textContent = humidity;
+          humidityInfo.textContent = `${humidity * 100}%`;
 
           // Change temperature between celsius/farenheit
           temperatureDegree.addEventListener('click', () =>{
