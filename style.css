@@ -13,6 +13,8 @@ body {
 
 .main-info {
   /* outline: 2px solid black; */
+  margin-top: 30px;
+  margin-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
