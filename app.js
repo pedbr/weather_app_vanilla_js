@@ -45,13 +45,27 @@ window.addEventListener('load', () => {
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
 
-          // Adding Extra Elements
+          // ADDING EXTRA ELEMENTS
+
+          // Today's maximum temperature
           maxTemperatureInfo.textContent = temperatureMax;
+
+          // Today's minimum temperature
           minTemperatureInfo.textContent = temperatureLow;
+
+          // Today's sunrise time
           sunriseInfo.textContent = sunriseTime;
+
+          // Today's sunset time
           sunsetInfo.textContent = sunsetTime;
+
+          // Current wind speed
           windSpeedInfo.textContent = windSpeed;
+
+          // Current probability of rain
           rainProbabilityInfo.textContent = precipProbability;
+
+          // Current humidity
           humidityInfo.textContent = humidity;
 
           // Change temperature between celsius/farenheit
