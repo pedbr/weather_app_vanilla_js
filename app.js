@@ -73,7 +73,7 @@ window.addEventListener('load', () => {
           sunsetInfo.textContent = epochToRealTime(sunsetTime);
 
           // Current wind speed
-          windSpeedInfo.textContent = windSpeed;
+          windSpeedInfo.textContent = `${Math.floor(windSpeed)} m/s`;
 
           // Current probability of rain
           rainProbabilityInfo.textContent = precipProbability;
