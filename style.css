@@ -15,6 +15,7 @@ body {
   /* outline: 2px solid black; */
   margin-top: 30px;
   margin-bottom: 50px;
+  margin-left: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,15 +28,16 @@ body {
   align-items: center;
   background: white;
   color: rgb(97, 212, 241);
-  font-size: 60px;
+  font-size: 50px;
   width: 330px;;
-  height: 80px;
+  height: 70px;
   font-weight: bold;
   border-radius: 15px;
 }
 
 .location {
   /* outline: 2px solid black; */
+  font-size: 24px;
   margin: 20px;
   width: fit-content;
 }
@@ -53,8 +55,8 @@ body {
 }
 
 .degree-section{
-  margin: 20px;
   /* outline: 2px solid black; */
+  margin: 20px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -63,16 +65,17 @@ body {
 .degree-section span {
   /* outline: 2px solid black; */
   margin: 10px;
-  font-size: 30px;
+  font-size: 80px;
 }
 
 .degree-section h2 {
   /* outline: 2px solid black; */
-  font-size: 50px;
+  font-size: 100px;
 }
 
 .temperature-description {
-  font-size: 30px;
+  margin-top: 10px;
+  font-size: 25px;
   text-align: center;
 }
 
