@@ -6,39 +6,41 @@
 
 body {
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   background: linear-gradient(rgb(132, 235, 245), rgb(78, 145, 207));
   font-family: sans-serif;
   color: white;
 }
 
-.location,
-.temperature {
+.location {
+  outline: 2px solid black;
   height: 30vh;
   width:50%;
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
 }
 
 .temperature {
-  flex-direction: column;
+  outline: 2px solid black;
+  height: 30vh;
+  width:50%;
 }
 
 .degree-section{
+  outline: 2px solid black;
   display: flex;
-  align-items: center;
   cursor: pointer;
 }
 
 .degree-section span {
+  outline: 2px solid black;
   margin: 10px;
   font-size: 30px;
 }
 
 .degree-section h2 {
+  outline: 2px solid black;
   font-size: 40px;
+}
+
+.week-forecast {
+  outline: 2px solid black;
+  height: 30vh;
 }
