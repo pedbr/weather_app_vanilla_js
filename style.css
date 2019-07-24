@@ -63,7 +63,38 @@ body {
   font-size: 30px;
 }
 
-.week-forecast {
+.add-elements {
   outline: 2px solid black;
-  height: 30vh;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.max-temp {
+  outline: 2px solid black;
+}
+
+.min-temp {
+  outline: 2px solid black;
+}
+
+.sunrise {
+  outline: 2px solid black;
+}
+
+.sunset{
+  outline: 2px solid black;
+}
+
+.wind-speed{
+  outline: 2px solid black;
+}
+
+.rain-prob {
+  outline: 2px solid black;
+}
+
+.humidity {
+  outline: 2px solid black;
 }
