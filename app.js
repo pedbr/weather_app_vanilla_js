@@ -32,6 +32,8 @@ window.addEventListener('load', () => {
           console.log(data);
           const { temperature, summary, icon, precipProbability, windSpeed, humidity } = data.currently;
           const { temperatureLow, temperatureMax, sunriseTime, sunsetTime } = data.daily.data[1]
+
+          
           // Set DOM Elements from API
           
           temperatureDescription.textContent = summary;
@@ -41,6 +43,15 @@ window.addEventListener('load', () => {
           let celsius = (temperature - 32) * (5 / 9);
           temperatureDegree.textContent = `${Math.floor(celsius)}°`;
           temperatureSpan.textContent = "C";
+
+          // Formula to convert Epoch to Normal Time
+          function epochToRealTime(t){
+            let date = new Date(t*1000);
+            let hour = date.getHours();
+            let mins = "0" + date.getMinutes();
+            let secs = "0" + date.getSeconds();
+            return hour+ ':' + mins.substr(-2) + ':' + secs.substr(-2);  
+          }
 
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
@@ -56,18 +67,10 @@ window.addEventListener('load', () => {
           minTemperatureInfo.textContent = `${Math.floor(celsiusMin)}°C`;
 
           // Today's sunrise time
-          function epochToRealTime(t){
-          let date = new Date(t*1000);
-          let hour = date.getHours();
-          let mins = "0" + date.getMinutes();
-          let secs = "0" + date.getSeconds();
-          return hour+ ':' + mins.substr(-2) + ':' + secs.substr(-2);  
-          }
-
           sunriseInfo.textContent = epochToRealTime(sunriseTime);
 
           // Today's sunset time
-          sunsetInfo.textContent = sunsetTime;
+          sunsetInfo.textContent = epochToRealTime(sunsetTime);
 
           // Current wind speed
           windSpeedInfo.textContent = windSpeed;
