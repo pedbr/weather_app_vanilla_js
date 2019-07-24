@@ -48,7 +48,8 @@ window.addEventListener('load', () => {
           // ADDING EXTRA ELEMENTS
 
           // Today's maximum temperature
-          maxTemperatureInfo.textContent = temperatureMax;
+          let celsiusMax = (temperatureMax - 32) * (5 / 9);
+          maxTemperatureInfo.textContent = `${Math.floor(celsiusMax)}°C`;
 
           // Today's minimum temperature
           minTemperatureInfo.textContent = temperatureLow;
