@@ -36,8 +36,12 @@ window.addEventListener('load', () => {
           
           // Set DOM Elements from API
           
+          // Adding weather description
           temperatureDescription.textContent = summary;
-          locationTimezone.textContent = data.timezone;
+
+          // Adding location/timezone
+          let currentLocation = data.timezone.replace('Europe/','')
+          locationTimezone.textContent = currentLocation;
 
           // Formula to conver farenheit to celsius
           let celsius = (temperature - 32) * (5 / 9);
