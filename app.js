@@ -52,7 +52,8 @@ window.addEventListener('load', () => {
           maxTemperatureInfo.textContent = `${Math.floor(celsiusMax)}°C`;
 
           // Today's minimum temperature
-          minTemperatureInfo.textContent = temperatureLow;
+          let celsiusMin = (temperatureLow - 32) * (5 / 9);
+          minTemperatureInfo.textContent = `${Math.floor(celsiusMin)}°C`;
 
           // Today's sunrise time
           sunriseInfo.textContent = sunriseTime;
