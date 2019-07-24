@@ -13,26 +13,38 @@ body {
 
 .main-info {
   outline: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-now {
+  font-size: 60px;
 }
 
 .location {
   outline: 2px solid black;
+  margin: 20px;
   width: fit-content;
 }
 
 .icon-div {
   outline: 2px solid black;
+  margin: 20px;
   width: fit-content;
 }
 
 .temperature {
   outline: 2px solid black;
+  margin: 20px;
   width: fit-content;
 }
 
 .degree-section{
+  margin: 20px;
   outline: 2px solid black;
   display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -44,7 +56,11 @@ body {
 
 .degree-section h2 {
   outline: 2px solid black;
-  font-size: 40px;
+  font-size: 50px;
+}
+
+.temperature-description {
+  font-size: 30px;
 }
 
 .week-forecast {
