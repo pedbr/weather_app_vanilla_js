@@ -5,7 +5,14 @@ window.addEventListener('load', () => {
   let temperatureDegree = document.querySelector('.temperature-degrees');
   let locationTimezone = document.querySelector('.location-timezone');
   let temperatureSection = document.querySelector('.temperature');
-  const temperatureSpan = document.querySelector('.temperature span')
+  const temperatureSpan = document.querySelector('.temperature span');
+  let maxTemperatureInfo = document.querySelector('.max-temp-info');
+  let minTemperatureInfo = document.querySelector('.min-temp-info');
+  let sunriseInfo = document.querySelector('.sunrise-info');
+  let sunsetInfo = document.querySelector('.sunset-info');
+  let windSpeedInfo = document.querySelector('.wind-speed-info');
+  let rainProbabilityInfo = document.querySelector('.rain-prob-info');
+  let humidityInfo = document.querySelector('.humidity-info');
 
   if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(position => {
@@ -25,7 +32,7 @@ window.addEventListener('load', () => {
         .then(data => {
           console.log(data);
           const { temperature, summary, icon, precipProbability, windSpeed, humidity } = data.currently;
-          const { temperatureLow, temperatureMax, sunriseTime, sunsetTime } = data.daily[1]
+          const { temperatureLow, temperatureMax, sunriseTime, sunsetTime } = data.daily.data[1]
           // Set DOM Elements from API
           
           temperatureDescription.textContent = summary;
