@@ -33,7 +33,6 @@ window.addEventListener('load', () => {
           temperatureSpan.textContent = "C";
           // Set Icon
           setIcons(icon, document.querySelector(".icon"));
-          debugger
           // Change temperature between celsius/farenheit
           temperatureDegree.addEventListener('click', () =>{
             if(temperatureSpan.textContent === "F"){
@@ -55,7 +54,6 @@ window.addEventListener('load', () => {
     const skycons = new Skycons({ color: "white" });
     const currentIcon = icon.replace(/-/g, "_").toUpperCase();
     skycons.play();
-    debugger
     let clearNightColor = `linear-gradient(#16222A, #3A6073);`;
     let clearDayColor = `linear-gradient(#2BC0E4, #EAECC6);`;
     let rainColor = `linear-gradient(#bdc3c7, #2c3e50);`;
@@ -63,7 +61,6 @@ window.addEventListener('load', () => {
     let windColor = `linear-gradient(#C9D6FF, #E2E2E2);`;
     let partialCloudNight = `linear-gradient(#20002c, #cbb4d4);`;
     let partialCloudDay = `linear-gradient(#6190E8, #A7BFE8);`;  
-    debugger
     if (icon === 'clear-night'){
       document.body.style.background = clearNightColor
     } else if (icon === 'clear-day'){
@@ -87,7 +84,6 @@ window.addEventListener('load', () => {
     } else {
       document.body.style.background = `${clearDayColor}`
     }
-    debugger
     return skycons.set(iconID, Skycons[currentIcon]);
   }
 });
