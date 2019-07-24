@@ -12,89 +12,94 @@ body {
 }
 
 .main-info {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .right-now {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: rgb(97, 212, 241);
   font-size: 60px;
+  width: 300px;;
+  height: 80px;
+  border-radius: 15px;
 }
 
 .location {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   margin: 20px;
   width: fit-content;
 }
 
 .icon-div {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   margin: 20px;
   width: fit-content;
 }
 
 .temperature {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   margin: 20px;
   width: fit-content;
 }
 
 .degree-section{
   margin: 20px;
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
 .degree-section span {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   margin: 10px;
   font-size: 30px;
 }
 
 .degree-section h2 {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   font-size: 50px;
 }
 
 .temperature-description {
   font-size: 30px;
+  text-align: center;
 }
 
 .add-elements {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
   height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.max-temp {
-  outline: 2px solid black;
+.today {
+  font-size: 30px;
 }
 
-.min-temp {
-  outline: 2px solid black;
-}
-
-.sunrise {
-  outline: 2px solid black;
-}
-
-.sunset{
-  outline: 2px solid black;
-}
-
-.wind-speed{
-  outline: 2px solid black;
-}
-
-.rain-prob {
-  outline: 2px solid black;
-}
-
+.max-temp,
+.min-temp,
+.sunrise,
+.sunset,
+.wind-speed,
+.rain-prob,
 .humidity {
-  outline: 2px solid black;
+  /* outline: 2px solid black; */
+  background: rgb(236, 255, 255);
+  color: rgb(97, 212, 241);
+  width: 130px;;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin:10px;
+  border-radius: 15px;
 }
