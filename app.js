@@ -24,7 +24,8 @@ window.addEventListener('load', () => {
         })
         .then(data => {
           console.log(data);
-          const { temperature, summary, icon } = data.currently;
+          const { temperature, summary, icon, precipProbability, windSpeed, humidity } = data.currently;
+          const { temperatureLow, temperatureMax, sunriseTime, sunsetTime } = data.daily[1]
           // Set DOM Elements from API
           
           temperatureDescription.textContent = summary;
