@@ -56,7 +56,15 @@ window.addEventListener('load', () => {
           minTemperatureInfo.textContent = `${Math.floor(celsiusMin)}°C`;
 
           // Today's sunrise time
-          sunriseInfo.textContent = sunriseTime;
+          function epochToRealTime(t){
+          let date = new Date(t*1000);
+          let hour = date.getHours();
+          let mins = "0" + date.getMinutes();
+          let secs = "0" + date.getSeconds();
+          return hour+ ':' + mins.substr(-2) + ':' + secs.substr(-2);  
+          }
+
+          sunriseInfo.textContent = epochToRealTime(sunriseTime);
 
           // Today's sunset time
           sunsetInfo.textContent = sunsetTime;
