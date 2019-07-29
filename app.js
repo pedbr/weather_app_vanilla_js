@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
         .then(data => {
           console.log(data);
           const { temperature, summary, icon, precipProbability, windSpeed, humidity } = data.currently;
-          const { temperatureLow, temperatureMax, sunriseTime, sunsetTime } = data.daily.data[1]
+          const { temperatureLow, temperatureMax, sunriseTime, sunsetTime } = data.daily.data[0]
 
           
           // Set DOM Elements from API
